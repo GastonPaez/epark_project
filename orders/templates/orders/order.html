@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+    {% include 'orders/snippets/breadcrumb.html' %}
+{% endblock %}
+
+{% block content%}
+{% load parking_extras %}
+
+    <div class="col-8">
+        <div class="h3">
+            Revisa tu reserva antes de realizar el Pago
+        </div>
+        <div class="card">
+            <div class="card-body">
+                {% for parking in reserve.parkings.all %}
+                    {% include 'orders/snippets/parking.html' %}
+                {% endfor%}                
+            </div>         
+        </div>
+        {% include 'orders/snippets/resume.html' %}
+        
+        </div>
+    </div>
+    
+{% endblock%}
+

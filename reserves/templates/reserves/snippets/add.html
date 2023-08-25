@@ -1,0 +1,72 @@
+<div class="card">
+<form action="{% url 'reserves:add' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="parking_id" value="{{ parking.id }} ">
+    <p class="h3 p-1">Reserva por Horas</p>
+    <div class="d-flex">
+        <button type="button" class="btn btn-secondary" id="remove">-</button>
+        <input type="number" name="quantity" value="1" class="form-control col-sm-1 text-center" style="width: 50px;" id="quantity" readonly>
+        <button type="button" class="btn btn-secondary" id="add">+</button>
+    
+        <div class="mt-2">
+            <button type="submit" class="btn btn-warning"> Reservar</button>
+        </div>
+    </div>
+</form>
+</div>
+<div class="card mt-5">    
+    
+        <div class="card">
+            <form action="{% url 'reserves:add' %}" method="post">
+                {% csrf_token %}
+                <li class="list-group-item">
+                    Precio Dia: <span> ${{ parking.price_day}}</span>
+                </li>
+                <input type="hidden" name="parking_id" value="{{ parking.id }} ">       
+                <div class="mt-2">
+                    <button type="submit" name='quantity' value="20" class="btn btn-warning btn-sm">Reservar Estadia</button>
+                </div>
+            </form>
+        </div>
+        <div class="card mt-2">
+            <form action="{% url 'reserves:add' %}" method="post">
+                {% csrf_token %}
+                <li class="list-group-item">
+                    Precio Semana: <span>${{ parking.price_week}}</span>
+                </li>
+                <input type="hidden" name="parking_id" value="{{ parking.id }} ">       
+                <div class="mt-2">
+                    <button type="submit" name='quantity' value="110" class="btn btn-warning btn-sm ">Reserva Semanal</button>
+                </div>
+            </form>
+        </div>
+        <div class="card mt-2">
+            <form action="{% url 'reserves:add' %}" method="post">
+                {% csrf_token %}
+                <li class="list-group-item">
+                    Precio Mensual: <span>${{ parking.price_month}}</span>
+                </li>
+                <input type="hidden" name="parking_id" value="{{ parking.id }} ">       
+                <div class="mt-2">
+                    <button type="submit" name='quantity' value="500" class="btn btn-warning btn-sm btn-block">Reserva Mensual</button>
+                </div>
+            </form>
+        </div>
+    
+</div>
+<script>
+    const add = document.getElementById('add')
+    const remove = document.getElementById('remove')
+    const quantity = document.getElementById('quantity')
+
+    add.addEventListener('click', function(){
+        quantity.value = parseInt(quantity.value) + 1
+    })
+    remove.addEventListener('click', function(){
+        value = parseInt(quantity.value)
+        if(value != 1){
+            value = value -1
+        }
+        quantity.value = value
+    })
+</script>

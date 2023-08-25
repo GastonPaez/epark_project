@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load parking_extras %}
+    {% block content %}
+        
+        {% if reserve.parkings.exists %}
+        <div class="row mt-3 p-3">
+        <div class="col-7 card">
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th scope="col"> </th>
+                        <th scope="col">Parking </th>
+                        <th scope="col">Tiempo de Reserva</th>
+                        <th scope="col">Precio por hora </th>
+                        <!--
+                        <th scope="col">Precio por estadia </th>
+                        <th scope="col">Precio semanal </th>-->
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for rp in reserve.parkings_related %}
+                    {% with parking=rp.parking %}
+                    <tr>
+                        <th> {{ forloop.counter }} </th>
+                        <th>
+                            <a href="{% url 'parking:parking' parking.slug %} ">
+
+                                {{ parking.title }} 
+
+                            </a> 
+                            {% include 'reserves/snippets/remove.html' %}
+                        </th>
+                        <th>
+                            <span class="font-weight-bold text-success">
+                                {% if rp.quantity == 500 %}
+                                <p>Mes</p>
+                                {% elif rp.quantity == 110 %}
+                                <p>Semana</p>
+                                {% elif rp.quantity == 20 %}
+                                <p>Dia</p>
+                                {% else %}                                
+                                {{ rp.quantity }} horas
+                                {% endif %}
+                            </span>
+                        </th>
+                        <th>
+                            <span class="font-weight-bold text-danger">
+                                {{ parking.price_hour | price_format}}
+                            </span>
+                        </th>
+                        <!--
+                        <th>
+                            <span class="font-weight-bold text-danger">
+                                {{ parking.price_day | price_format}}
+                            </span>
+                        </th>
+                        <th>
+                            <span class="font-weight-bold text-danger">
+                                {{ parking.price_week | price_format}}
+                            </span>
+                        </th>-->
+                    </tr>
+                    {% endwith %}
+                    {% endfor %}
+                </tbody>
+            </table>            
+        </div>
+
+        <div class="col-2">
+            <div class="card">
+                <div class="card-body">
+                    <div class="font-weight-bold">
+                        Subtotal ({{ reserve.parkings.count }}): <span class="text-danger" >
+                            {{ reserve.subtotal | price_format }}
+                        </span>
+                    </div>
+                    <div class="mt-2">
+                        <a href="{% url 'orders:order' %} " class="btn btn-warning">Proceder al pago</a>
+                    </div>
+                </div>                
+            </div>
+            
+        </div>
+        {% else %}
+        <div class="col">
+            <p class="h3">
+                Aun no tienes reservas
+            </p>
+        </div>
+
+        {% endif %}
+    </div>
+    {% endblock %}

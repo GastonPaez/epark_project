@@ -1,0 +1,8 @@
+<div class="card h-100">
+    <div class="col card-body">
+        <h5 class="card-title">{{ parking.title }} </h5>
+        <p class="card-ted">{{ parking.address_p }} </p>
+        <p class="card-ted text-danger">Hora: ${{ parking.price_hour }} </p>
+        <a href="{% url 'parking:parking' parking.slug %}"> <button  class="btn btn-primary">Seleccionar</button></a>
+    </div>
+</div>

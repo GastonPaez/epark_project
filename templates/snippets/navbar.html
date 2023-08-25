@@ -1,0 +1,56 @@
+{% load static %}
+
+{% url 'login' as login %}
+{% url 'register' as register %}
+{% url 'reserves:reserve' as reserve %}
+
+<nav class="top-nav-bar navbar navbar-expand-lg navbar-dark bg-ligth p-2" style="background-color: #1b2a4e;">
+  
+  
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <img src="../../static/image/epark.png" height="35" alt="">
+        </a> 
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'index' %}">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+            <!-- <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="navbarDropdown">
+            Parkings
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'parking' %}">Más buscados</a>
+            <a class="dropdown-item" href="{% url 'parking' %}">Promociones</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'parking' %}">Estacionamientos</a>
+          </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contacto</a>
+        </li>
+        {% if user.is_authenticated %}        
+        <li class="nav-item">
+            <a href="{{ reserve }}" class="nav-link">Mis Reservas</a>
+        </li>
+
+        <li class="nav-item">
+            <a href="{% url 'logout' %}" class="nav-link text-light fw-bold"><u>{{ user.username }}</u></a>
+        </li>
+        <li class="nav-item">
+            <a href="{% url 'logout' %}" class="nav-link">Salir</a>
+        </li>
+
+        {% else %}
+        <li class="nav-item  {% if request.path == login %}active {% endif %}">
+            <a class="nav-link" href="{% url 'login' %}">Ingresar</a>
+        </li>
+        <li class="nav-item {% if request.path == register %}active {% endif %}">
+            <a class="nav-link" href="{% url 'register' %}">Registrarse</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>

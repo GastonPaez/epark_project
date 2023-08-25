@@ -1,0 +1,30 @@
+{% load parking_extras %}
+<div class="card">
+    <div class="card-body">
+        <div class="fw-bold h3">
+            Resumen de la compra
+        </div>
+        <div>
+            <table class="table table-border-less table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="h4">Total:</td>
+                        <td class="h5 text-success fw-bold">{{ order.total | price_format }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-2">
+            <a href="{% url 'orders:credit-card'  %} " class="btn btn-warning">Confirmar Pedido</a>
+        </div>
+        <div class="mt-2">
+            <a href="{% url 'reserves:reserve' %} " class="btn btn-warning">Volver</a>
+        </div>
+    </div>
+</div>

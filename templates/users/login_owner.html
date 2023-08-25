@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+    {% block content %}
+
+    <div class="col">
+        <h2>LOGIN</h2>
+    </div>
+    <br>
+    <p>PAGINA DE INGRESO DEL ADMINISTRADOR DE PARQUEADERO</p>
+    <form action="" method="post" id="">
+        {% csrf_token %}
+        <div>                
+            <label for="username" name="">Username</label>
+            <input type="text" name="username" id="username" id="">
+        </div>
+        <br>
+        <br>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="">
+        </div>    
+
+        <button class="btn btn-primary" type="submit">Login </button>
+    </form>
+
+    <div class="section mt-4">
+        <div class="container">
+            <h2>Regístrate como usuario final</h2>
+            """<a href="{% url 'register' %}">
+                <button class="btn btn-primary">Registro para usuario final</button>
+            </a>"""
+            <h2>¿Tienes un parqueadero privado?</h2>
+            <h2>Regístrate como dueño de parqueaderos</h2>
+            <a href="{% url 'register_owner' %}">
+                <button class="btn btn-primary">Registro para dueño de parqueadero</button>
+            </a>
+        </div>
+    </div>
+
+    {% endblock %}
+
+   

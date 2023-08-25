@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rcd eparkel="icon" type="image/png" href="images/icons/epark.png" />
+<div class="col">
+        <h4 class=m-2 style="font-size: 32px; text-align: center"> <b>¿A dónde tienes que viajar hoy?
+                </b></h4>
+        <h4 class=m-2 style="font-size: 20px; text-align: center">El estacionamiento no es problema, lo encontrarás en
+                Epark.
+        </h4>
+</div>
+
+<div class="container">
+        {% include 'parking/snippets/search.html' %}
+        <div class="row">
+                <div class=" col-md-3 text-left">
+                        <div class="mt-3 mb-3">
+                                <p class="h5">Los más Buscados: </p>
+                        </div>
+                        <div class="mt-2">
+                                {% for parking in parkings %}
+                                {% if forloop.first %}
+                                <div class="mt-2">
+                                        {% include 'parking/snippets/parking.html' %}
+                                </div>
+                                {% endif %}        
+
+                                {% if forloop.last %}
+                                <div class="mt-2 mb-5">
+                                        {% include 'parking/snippets/parking.html' %}
+                                </div>
+                                {% endif %}
+                               
+                                {% endfor %}
+                        </div>
+                </div>
+                <div class="col col-map mt-5">                        
+                        <div class="row">              
+                                <iframe src="https://www.google.com/maps/d/embed?mid=1LaLDtSY8-fL9pZVCNApe9QV61YgQh9s&hl=en&ehbc=2E312F" width="640" height="480" class="remove-top"></iframe>
+                        </div>
+                </div>
+
+        </div>
+</div>
+{% endblock %}

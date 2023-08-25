@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container-contact container  border-top border-primary ">
+
+    <section class="signup">
+        <div class="text-center mb-4" id="titulo-formulario">
+            <div><img src="{%static 'image/user.png'%}" alt="" class="img-fluid"></div>
+            <h2>Crear Cuenta</h2>
+        </div>
+        <!-- <img src="images/signup-bg.jpg" alt=""> -->
+        <div class="container">
+            <div class="signup-content">
+                <form method="POST" id="signup-form" class="signup-form">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        {{ form.name }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.lastname }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.email }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.phone }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.country }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.city }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.password }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.password2 }}
+                    </div>
+                    <div class="mb-3">
+                        <input type="submit" name="submit" id="submit" class="btn btn-primary w-100 fs-5"
+                            value="Registrarse" />
+                    </div>
+                </form>
+                <p class="loginhere">
+                    Ya tienes una cuenta? <a href="{% url 'login' %}" class="loginhere-link">Logueate aqui.</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- JS -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'js/register.js' %}"></script>
+
+{% endblock %}
