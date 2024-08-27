@@ -18,7 +18,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production 
+# Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 SECRET_KEY = 'django-insecure-=cldztbc4jg&xl0!x673!*v2_=p$$eu)=7*f#d0#zs$44xx-h^'
@@ -37,10 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',    
+    'django.contrib.staticfiles',
     'parking',
     'users',
-    'reserves',    
+    'reserves',
     'orders'
 ]
 
@@ -63,7 +63,7 @@ AUTH_USER_MODEL = 'users.User'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS':  [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -83,9 +83,12 @@ WSGI_APPLICATION = 'epark.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'db.sqlite3',
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'gpdev1908$default',
+        'USER': 'gpdev1908',
+        'PASSWORD': 'Chango2011',
+        'HOST': 'gpdev1908.mysql.pythonanywhere-services.com',
     }
 }
 

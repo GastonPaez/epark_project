@@ -10,7 +10,7 @@
 html {
     min-height: 100%;
     position: relative;
-    
+
   }
 
 body{
@@ -18,7 +18,7 @@ body{
     background: #C9D6FF;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+
 
 
 
@@ -199,7 +199,7 @@ col.form-control col.form-input{
 
     --bs-btn-bg: #1b2a4e;
     --bs-btn-color: #fff;
-    
+
 }
 
 
@@ -208,7 +208,7 @@ div.container-login{
     border-radius:5px;
     max-width: 500px;
     color: white;
-    
+
 }
 
 
@@ -218,7 +218,7 @@ div.container-contact{
     background: #fbfafa;
     border-radius:5px;
     max-width: 500px;
-    
+
 }
 
 #titulo-formulario {
@@ -234,7 +234,7 @@ footer {
     width: 100%;
     bottom: 0;
     min-width: 300px;
-    
+
 }
 footer p{
     color:#f3f3f3;
@@ -259,7 +259,7 @@ iframe.remove-top{
 }
 
 div.top-map{
-    height: 20px;
+
     background: white;
     position: relative;
 }
