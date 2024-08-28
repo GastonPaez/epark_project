@@ -14,13 +14,21 @@ html {
   }
 
 body{
+    background-image: url(../image/parking-banner.jpg);
     font-family: 'Poppins', sans-serif;
-    background: #C9D6FF;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover; /* Hace que la imagen cubra todo el área del body */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
+    height: 100vh; /* Hace que el body tenga la altura de la ventana del navegador */
+    margin: 0; /* Elimina los márgenes del body */
 
 
+/* 
+    background: #C9D6FF;   fallback for old browsers
+    background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  
+    background: linear-gradient(to right, #E2E2E2, #C9D6FF); 
 
+*/
 
 }
 
