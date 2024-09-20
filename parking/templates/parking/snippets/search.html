@@ -1,8 +1,24 @@
 <form action="{% url 'parking:search' %} ">
-    <div class="input-group">
-        <input type="text" class="form-control" name="q" placeholder="Buscar" value="{{ query }}">
-        <div class="input-group-append">
-            <input type="submit" value="Buscar" class="btn btn-primary">
+    <div class="container-fluid booking mt-5 pb-5">
+        <div class="container pb-5">
+            <div class="bg-light shadow p-4">
+                <div class="row align-items-center" style="min-height: 60px;">
+                    <div class="col-md-10">
+                        <div class="row">                        
+                            <div class="">
+                                <div class="mb-3 mb-md-0">
+                                    <div class="date" id="date1" data-target-input="nearest">
+                                        <input type="text" class="form-control datetimepicker-input p-3" name="q" placeholder="Buscar" value="{{ query }}">                                    
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" value="Buscar" class="btn btn-primary btn-block p-3">                        
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </form>
