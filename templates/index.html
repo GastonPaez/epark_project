@@ -3,84 +3,43 @@
 
 {% block content %}
 <link rcd eparkel="icon" type="image/png" href="images/icons/epark.png" />
-
-<!-- Carousel Start -->
-<div class="container-fluid p-0">
-        <div id="header-carousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="../static/image/parking-banner.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
-                            <h1 class="display-3 text-white mb-md-4">Let's Discover The World Together</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="../static/image/parking-banner.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
-                            <h1 class="display-3 text-white mb-md-4">Discover Amazing Places With Us</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
-                <div class="btn btn-dark" style="width: 45px; height: 45px;">
-                    <span class="carousel-control-prev-icon mb-n2"></span>
-                </div>
-            </a>
-            <a class="carousel-control-next" href="#header-carousel" data-slide="next">
-                <div class="btn btn-dark" style="width: 45px; height: 45px;">
-                    <span class="carousel-control-next-icon mb-n2"></span>
-                </div>
-            </a>
-        </div>
-    </div>
-    <!-- Carousel End -->
-
-<div class="col">
-        <h4 class=m-2 style="font-size: 32px; text-align: center"> <b>¿A dónde tienes que viajar hoy?
-                </b></h4>
-        <h4 class=m-2 style="font-size: 20px; text-align: center">El estacionamiento no es problema, lo encontrarás en
-                Epark.
-        </h4>
-</div>
-
 <div class="container">
-        {% include 'parking/snippets/search.html' %}
-        <div class="row">
-                <div class=" col-md-3 text-left">
-                        <div class="mt-3 mb-3">
-                                <p class="h5">Los más Buscados: </p>
-                        </div>
-                        <div class="mt-2">
-                                {% for parking in parkings %}
-                                {% if forloop.first %}
-                                <div class="mt-2">
-                                        {% include 'parking/snippets/parking.html' %}
-                                </div>
-                                {% endif %}        
+    <div class="p-3">
+        <h4 class="text-white text-center text-uppercase mb-md-3 b-sh">El estacionamiento no es problema, lo encontrarás en
+            Epark.</h4>
+        <h1 class="text-center text-white mb-md-4 b-sh">¿A dónde tienes que viajar hoy?</h1>        
+    </div>
+    {% include 'parking/snippets/search.html' %}
+    <div class="row">
+            <div class=" col-md-3 text-left">
+                    <div class="mt-3 mb-3">
+                            <p class="text-white text-uppercase mb-md-3 b-sh">Los más Buscados: </p>
+                    </div>
+                    <div class="mt-2">
+                            {% for parking in parkings %}
+                            {% if forloop.first %}
+                            <div class="mt-2">
+                                    {% include 'parking/snippets/parking.html' %}
+                            </div>
+                            {% endif %}        
 
-                                {% if forloop.last %}
-                                <div class="mt-2 mb-5">
-                                        {% include 'parking/snippets/parking.html' %}
-                                </div>
-                                {% endif %}
-                               
-                                {% endfor %}
-                        </div>
-                </div>
-                <div class="col col-map mt-5">                        
-                        <div class="row">              
-                                <iframe src="https://www.google.com/maps/d/embed?mid=1LaLDtSY8-fL9pZVCNApe9QV61YgQh9s&hl=en&ehbc=2E312F" width="640" height="480" class="remove-top"></iframe>
-                        </div>
-                </div>
+                            {% if forloop.last %}
+                            <div class="mt-2 mb-5">
+                                    {% include 'parking/snippets/parking.html' %}
+                            </div>
+                            {% endif %}
+                           
+                            {% endfor %}
+                    </div>
+            </div>
+            <div class="col col-map mt-5">                        
+                    <div class="row">              
+                            <iframe src="https://www.google.com/maps/d/embed?mid=1LaLDtSY8-fL9pZVCNApe9QV61YgQh9s&hl=en&ehbc=2E312F" width="640" height="480" class="remove-top"></iframe>
+                    </div>
+            </div>
 
-        </div>
+    </div>
 </div>
+
+
 {% endblock %}

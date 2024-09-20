@@ -14,7 +14,7 @@ html {
   }
 
 body{
-    background-image: url(../image/parking-banner.jpg);
+    background-image: url(../image/parking-banner2.jpg);
     font-family: 'Poppins', sans-serif;
     background-size: cover; /* Hace que la imagen cubra todo el área del body */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -31,7 +31,10 @@ body{
 */
 
 }
-
+nav {
+    background: white;
+    height: 75px !important
+}
 .menu{
     background-color: #1b2a4e;
     color: #fff;
@@ -125,6 +128,11 @@ body{
 .menu__img{
     display: block;
     width: 36px;
+}
+
+.b-sh {
+    
+    text-shadow: 0px 0px 25px #000000 !important;
 }
 
 
