@@ -1,8 +1,19 @@
-<div class="card h-100">
-    <div class="col card-body">
-        <h5 class="card-title">{{ parking.title }} </h5>
-        <p class="card-ted">{{ parking.address_p }} </p>
-        <p class="card-ted text-danger">Hora: ${{ parking.price_hour }} </p>
-        <a href="{% url 'parking:parking' parking.slug %}"> <button  class="btn btn-primary">Seleccionar</button></a>
-    </div>
-</div>
+<div class="mb-4">
+                    <div class="package-item bg-white mb-2">
+                        <img class="img-fluid" src="..\..\..\..\static\image\package-6.jpg" alt="">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i> {{ parking.address_p }}</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i></small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i></small>
+                            </div>
+                            <a class="h5 text-decoration-none" href="{% url 'parking:parking' parking.slug %}">{{ parking.title }}<button  class="btn btn-primary">Seleccionar</button></a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">Hora: ${{ parking.price_hour }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>

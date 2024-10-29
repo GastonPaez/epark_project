@@ -12,13 +12,20 @@ html {
     position: relative;
 
   }
-
-body{
-    background-image: url(../image/parking-banner2.jpg);
+  .post-body  {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                      url(../image/parking-banner2.jpg);
     font-family: 'Poppins', sans-serif;
-    background-size: cover; /* Hace que la imagen cubra todo el área del body */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-position: center; /* Centra la imagen */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative; /* Necesario para que el overlay se posicione correctamente */
+}
+
+.main-bg{   
+}
+body{
+    
     height: 100vh; /* Hace que el body tenga la altura de la ventana del navegador */
     margin: 0; /* Elimina los márgenes del body */
 
@@ -26,7 +33,7 @@ body{
 /* 
     background: #C9D6FF;   fallback for old browsers
     background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  
-    background: linear-gradient(to right, #E2E2E2, #C9D6FF); 
+    background: linear-gradient(to right, #E2E2E2, #C9D6FF); ssss.
 
 */
 
@@ -314,7 +321,7 @@ div.top-map{
 
 div.content{
     margin-bottom: 60px;
-    padding: 5px;
+    
     min-width: 300px;
 }
 
