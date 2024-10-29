@@ -1,18 +1,22 @@
 <div class="mb-4">
                     <div class="package-item bg-white mb-2">
                         <img class="img-fluid" src="..\..\..\..\static\image\package-6.jpg" alt="">
-                        <div class="p-4">
+                        <div class="p-3">
                             <div class="d-flex justify-content-between mb-3">
-                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i> {{ parking.address_p }}</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i></small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i></small>
+                                <h6 class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i> {{ parking.address_p }}</h6>                                
+                                <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <h6>({{ parking.slots }})</h6>                                
+                                <h6 class="m-0"><i class="fa fa-car text-primary mr-2"></i> {{ parking.slots }}</h6>
                             </div>
-                            <a class="h5 text-decoration-none" href="{% url 'parking:parking' parking.slug %}">{{ parking.title }}<button  class="btn btn-primary">Seleccionar</button></a>
-                            <div class="border-top mt-4 pt-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">Hora: ${{ parking.price_hour }}</h5>
+                            <div class="col h5 text-decoration-none">
+                                {{ parking.title }}
+                            </div>
+                            <div class="row">
+                                <div class="col  align-self-center">                                    
+                                        <a class="h5 text-decoration-none" href="{% url 'parking:parking' parking.slug %}"><button  class="btn btn-primary">Seleccionar</button></a>                                                                            
                                 </div>
+                                <div class="col align-self-center">                                    
+                                    <h6 class="text-primary"><i class="text-dark">Hora:</i> ${{ parking.price_hour }}</h6>
+                                </div>                                
                             </div>
                         </div>
                     </div>
