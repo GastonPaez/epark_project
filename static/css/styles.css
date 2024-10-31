@@ -13,7 +13,7 @@ html {
 
   }
   .post-body  {
-    height: 100vh;
+    /* height: 100vh; */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                       url(../image/parking-banner2.jpg);
     font-family: 'Poppins', sans-serif;
