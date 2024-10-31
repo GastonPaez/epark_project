@@ -34,7 +34,7 @@
         <a class="nav-item nav-link">
             <a href="{{ reserve }}" class="nav-item nav-link">Mis Reservas</a>
         <a class="nav-item nav-link">
-            <a href="{% url 'logout' %}" class="nav-link text-light fw-bold"><u>{{ user.username }}</u></a>
+            <a href="{{ reserve }}" class="nav-link fw-bold"><u>{{ user.username.capitalize }}</u></a>
         </li>
         <a class="nav-item nav-link">
             <a href="{% url 'logout' %}" class="nav-link">Salir</a>
