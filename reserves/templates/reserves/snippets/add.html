@@ -28,6 +28,22 @@
                 </div>
             </form>
         </div>
+        <div class="container text-center my-4">
+            <form action="{% url 'reserves:add' %}" method="post">
+                {% csrf_token %}
+            <button class="d-inline-flex border border-info rounded-pill p-2 align-items-center"   type="submit" name='quantity' value="110" style="background-color: white;">
+                <div class="px-3">
+                    <p class="mb-1 text-muted">Precio Semana:</p>
+                    <p class="mb-0 fw-bold">${{ parking.price_week}}</p>
+                </div>
+                <div class="border-start border-info mx-2" style="height: 100%;"></div>
+                <div class="px-3">                    
+                    <p class="mb-0 fw-bold">Reserva Semanal</p>
+                </div>
+            </div>
+        </form>
+        </div>
+        
         <div class="card mt-2">
             <form action="{% url 'reserves:add' %}" method="post">
                 {% csrf_token %}
