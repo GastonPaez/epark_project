@@ -69,6 +69,21 @@ nav {
     height: 70px;
 }
 
+/* Personalización del botón transparente */
+.btn-transparent {
+    background-color: transparent;
+    border: 1px solid #ccc; /* Borde gris claro */
+    color: #000; /* Texto negro */
+    transition: all 0.3s ease;
+  }
+  .btn-transparent:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Fondo tenue al pasar el mouse */
+  }
+  /* Quitar el borde en el estado focus */
+  .btn-transparent:focus {
+    outline: none;
+    box-shadow: none; /* Desactiva el borde azul de Bootstrap */
+  }
 .menu__container{
     display: flex;
     justify-content: space-between;

@@ -3,6 +3,7 @@
     <div class="container text-center my-4">
         <form action="{% url 'reserves:add' %}" method="post">
             {% csrf_token %}
+            <input type="hidden" name="parking_id" value="{{ parking.id }} ">
             <div class="d-inline-flex border border-primary rounded-pill p-2 align-items-center" name='quantity'
                 value="110" style="background-color: white;">
                 <div class="px-3 d-flex">
@@ -14,7 +15,9 @@
                 </div>
                 <div class="border-start border-primary mx-2" style="height: 100%;">
                     <div class="px-3">
+                        <button type="submit" class="btn btn-transparen d-flex p-2 align-items-center">
                         <div type="submit" p class="mb-0 fw-bold">Reservar Horas</div>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -30,6 +33,7 @@
                     <p class="mb-1 text-muted">Precio Semana:</p>
                     <p class="mb-0 fw-bold"> ${{ parking.price_day}}</p>
                 </div>
+                <input type="hidden" name="parking_id" value="{{ parking.id }} ">
                 <div class="border-start border-primary mx-2" style="height: 100%;">
                     <div class="px-3">
                         <p class="mb-0 fw-bold">Reservar Estadia</p>
@@ -41,6 +45,7 @@
     <div class="container text-center my-4">
         <form action="{% url 'reserves:add' %}" method="post">
             {% csrf_token %}
+            <input type="hidden" name="parking_id" value="{{ parking.id }} ">
             <button class="d-inline-flex border border-primary rounded-pill p-2 align-items-center" type="submit"
                 name='quantity' value="110" style="background-color: white;">
                 <div class="px-3">
@@ -58,6 +63,7 @@
     <div class="container text-center my-4">
         <form action="{% url 'reserves:add' %}" method="post">
             {% csrf_token %}
+            <input type="hidden" name="parking_id" value="{{ parking.id }} ">
             <button class="d-inline-flex border border-primary rounded-pill p-2 align-items-center" type="submit"
                 name='quantity' value="110" style="background-color: white;">
                 <div class="px-3">
