@@ -40,6 +40,16 @@ body{
 
 }
 
+#parking-content{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.219), rgba(0, 0, 0, 0.171)), 
+                      url(../image/parking-banner2.jpg);
+    font-family: 'Poppins', sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative    
+}
+
 #contact-form{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                       url(../image/parking-banner2.jpg);
@@ -47,8 +57,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    position: relative
-
+    position: relative    
 }
 nav {
     background: white;

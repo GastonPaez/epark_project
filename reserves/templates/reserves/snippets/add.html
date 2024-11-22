@@ -1,87 +1,90 @@
-<div class="card">
-<form action="{% url 'reserves:add' %}" method="post">
-    {% csrf_token %}
-    <input type="hidden" name="parking_id" value="{{ parking.id }} ">
-    <p class="h3 p-1">Reserva por Horas</p>
-    <div class="d-flex">
-        <button type="button" class="btn btn-secondary" id="remove">-</button>
-        <input type="number" name="quantity" value="1" class="form-control col-sm-1 text-center" style="width: 50px;" id="quantity" readonly>
-        <button type="button" class="btn btn-secondary" id="add">+</button>
-    
-        <div class="mt-2">
-            <button type="submit" class="btn btn-primary"> Reservar</button>
-        </div>
-    </div>
-</form>
-</div>
-<div class="card mt-5">    
-    
-        <div class="card">
-            <form action="{% url 'reserves:add' %}" method="post">
-                {% csrf_token %}
-                <li class="list-group-item">
-                    Precio Dia: <span> ${{ parking.price_day}}</span>
-                </li>
-                <input type="hidden" name="parking_id" value="{{ parking.id }} ">       
-                <div class="mt-2">
-                    <button type="submit" name='quantity' value="20" class="btn btn-primary btn-sm">Reservar Estadia</button>
+<div class="mt-5">
+    <!-- RESERVA HORA -->
+    <div class="container text-center my-4">
+        <form action="{% url 'reserves:add' %}" method="post">
+            {% csrf_token %}
+            <div class="d-inline-flex border border-primary rounded-pill p-2 align-items-center" name='quantity'
+                value="110" style="background-color: white;">
+                <div class="px-3 d-flex">
+                    <div><button type="button" class="btn btn-primary rounded-circle" id="remove">-</button></div>
+                    <input type="number" name="quantity" value="1" class="form-control col-sm-1 text-center text-center"
+                        style="width: 50px;" id="quantity" readonly>
+                    <div><button type="button" class="btn btn-primary rounded-circle" id="add">+</button></div>
+
                 </div>
-            </form>
-        </div>
-        <div class="container text-center my-4">
-            <form action="{% url 'reserves:add' %}" method="post">
-                {% csrf_token %}
-            <button class="d-inline-flex border border-info rounded-pill p-2 align-items-center"   type="submit" name='quantity' value="110" style="background-color: white;">
+                <div class="border-start border-primary mx-2" style="height: 100%;">
+                    <div class="px-3">
+                        <div type="submit" p class="mb-0 fw-bold">Reservar Horas</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- RESERVA ESTADIA -->
+    <div class="container text-center my-4">
+        <form action="{% url 'reserves:add' %}" method="post">
+            {% csrf_token %}
+            <button class="d-inline-flex border border-primary rounded-pill p-2 align-items-center" type="submit"
+                name='quantity' value="110" style="background-color: white;">
+                <div class="px-3">
+                    <p class="mb-1 text-muted">Precio Semana:</p>
+                    <p class="mb-0 fw-bold"> ${{ parking.price_day}}</p>
+                </div>
+                <div class="border-start border-primary mx-2" style="height: 100%;">
+                    <div class="px-3">
+                        <p class="mb-0 fw-bold">Reservar Estadia</p>
+                    </div>
+                </div>
+        </form>
+    </div>
+    <!-- RESERVA SEMANAL -->
+    <div class="container text-center my-4">
+        <form action="{% url 'reserves:add' %}" method="post">
+            {% csrf_token %}
+            <button class="d-inline-flex border border-primary rounded-pill p-2 align-items-center" type="submit"
+                name='quantity' value="110" style="background-color: white;">
                 <div class="px-3">
                     <p class="mb-1 text-muted">Precio Semana:</p>
                     <p class="mb-0 fw-bold">${{ parking.price_week}}</p>
                 </div>
-                <div class="border-start border-info mx-2" style="height: 100%;"></div>
-                <div class="px-3">                    
-                    <p class="mb-0 fw-bold">Reserva Semanal</p>
+                <div class="border-start border-primary mx-2" style="height: 100%;">
+                    <div class="px-3">
+                        <p class="mb-0 fw-bold">Reservar Semanal</p>
+                    </div>
                 </div>
-            </div>
         </form>
-        </div>
-        
-        <div class="card mt-2">
-            <form action="{% url 'reserves:add' %}" method="post">
-                {% csrf_token %}
-                <li class="list-group-item">
-                    Precio Semana: <span>${{ parking.price_week}}</span>
-                </li>
-                <input type="hidden" name="parking_id" value="{{ parking.id }} ">       
-                <div class="mt-2">
-                    <button type="submit" name='quantity' value="110" class="btn btn-primary btn-sm ">Reserva Semanal</button>
+    </div>
+    <!-- RESERVA MENSUAL -->
+    <div class="container text-center my-4">
+        <form action="{% url 'reserves:add' %}" method="post">
+            {% csrf_token %}
+            <button class="d-inline-flex border border-primary rounded-pill p-2 align-items-center" type="submit"
+                name='quantity' value="110" style="background-color: white;">
+                <div class="px-3">
+                    <p class="mb-1 text-muted">Precio Mensual:</p>
+                    <p class="mb-0 fw-bold">{{ parking.price_month}}</p>
                 </div>
-            </form>
-        </div>
-        <div class="card mt-2">
-            <form action="{% url 'reserves:add' %}" method="post">
-                {% csrf_token %}
-                <li class="list-group-item">
-                    Precio Mensual: <span>${{ parking.price_month}}</span>
-                </li>
-                <input type="hidden" name="parking_id" value="{{ parking.id }} ">       
-                <div class="mt-2">
-                    <button type="submit" name='quantity' value="500" class="btn btn-warning btn-sm btn-block">Reserva Mensual</button>
+                <div class="border-start border-primary mx-2" style="height: 100%;">
+                    <div class="px-3">
+                        <p class="mb-0 fw-bold">Reservar Mensual</p>
+                    </div>
                 </div>
-            </form>
-        </div>
-    
+        </form>
+    </div>
+
 </div>
 <script>
     const add = document.getElementById('add')
     const remove = document.getElementById('remove')
     const quantity = document.getElementById('quantity')
 
-    add.addEventListener('click', function(){
+    add.addEventListener('click', function () {
         quantity.value = parseInt(quantity.value) + 1
     })
-    remove.addEventListener('click', function(){
+    remove.addEventListener('click', function () {
         value = parseInt(quantity.value)
-        if(value != 1){
-            value = value -1
+        if (value != 1) {
+            value = value - 1
         }
         quantity.value = value
     })
