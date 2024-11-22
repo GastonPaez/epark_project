@@ -7,25 +7,25 @@
 {% block content%}
 {% load parking_extras %}
 
-    <div class="col-6 ms-5">
+    <div class="col-6 ms-5 p-5 mb-5">
         <div class="h3 ">
             Comprobante de Pago
         </div>
         <br>
-        <div class="card ms-5">
-            <div class="card-header">
+        <div class="card">
+            <div class="card-header bg-warning">
                 <p class="h2">Ticket:</p>
-                    Número de orden: 0004568782
+                    <p class="p-2 h-2 fw-bold bg-dark text-light">Número de orden: 0004568782</p>
             </div> 
             <div class="card-body">
                     {% for parking in reserve.parkings.all %}
                         {% include 'orders/snippets/parking.html' %}
                     {% endfor%} 
             </div>  
-            <div class="card text-bg-warning ">                               
+            <div class="card text-bg-success ">                               
                     <p class="h4 ms-3 mt-3">Estado: Pago Concretado</p>
-                    <p class="h4 ms-3">Total:</p>
-                    <p class="h5 text-secondary fw-bold ms-3">{{ order.total | price_format }}</p>
+                    <p class="h4 ms-3">Total: <span class="h3 text-light fw-bold ms-3">{{ order.total | price_format }}</span></p>
+                    
             </div>                        
     </div>
     

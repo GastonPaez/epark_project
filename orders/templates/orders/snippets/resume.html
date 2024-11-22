@@ -1,5 +1,5 @@
 {% load parking_extras %}
-<div class="card">
+<div class="card w-75">
     <div class="card-body">
         <div class="fw-bold h3">
             Resumen de la compra
@@ -20,11 +20,13 @@
                 </tbody>
             </table>
         </div>
-        <div class="mt-2">
-            <a href="{% url 'orders:credit-card'  %} " class="btn btn-warning">Confirmar Pedido</a>
-        </div>
-        <div class="mt-2">
-            <a href="{% url 'reserves:reserve' %} " class="btn btn-warning">Volver</a>
-        </div>
+        <div class="d-flex">
+            <div class="mt-2">
+                <a href="{% url 'orders:credit-card' %}" class="btn btn-success border rounded-pill p-3 mx-3" style="width: 200px;">Confirmar Pedido</a>
+            </div>
+            <div class="mt-2">
+                <a href="{% url 'reserves:reserve' %}" class="btn btn-warning border rounded-pill p-3" style="width: 200px">Volver</a>
+            </div>
+            
     </div>
 </div>
