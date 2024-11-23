@@ -8,6 +8,7 @@ from django.db.models.signals import pre_save
 class Parking(models.Model):
     # crea tabla en la base de datos, los atributos son las columnas de las tablas.
     title = models.CharField(max_length=50)
+    city = models.CharField(max_length=50)
     owner_name = models.CharField(max_length=50)
     owner_surname = models.CharField(max_length=50)
     address_p  = models.TextField()   
@@ -26,7 +27,8 @@ class Parking(models.Model):
     avalaible = models.BooleanField(default=True)
     slug = models.SlugField(null=False, blank=False, unique=True) 
     created_at = models.DateTimeField(auto_now_add=True)
-
+    image = models.CharField(max_length=500)
+    
     def __str__(self) -> str:
         return self.title
 
